@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'JasperReports Icons_-en_IN';
+	src: url('JasperReports Icons_-en_IN.eot');
+	src: url('JasperReports Icons_-en_IN.eot?#iefix') format('embedded-opentype');
+	src: local('☺'),
+		url('JasperReports Icons_-en_IN.woff') format('woff'),
+		url('JasperReports Icons_-en_IN.ttf') format('truetype'),
+		url('JasperReports Icons_-en_IN.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
