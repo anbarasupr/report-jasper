@@ -1,7 +1,5 @@
 package com.spring.jasperreports.model.northwind;
 
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,14 +13,14 @@ public class Order {
 	@JsonProperty("OrderID")
 	private Long orderID;
 
-	@JsonProperty("OrderDate")
-	private Date orderDate;
-
-	@JsonProperty("ShippedDate")
-	private Date shippedDate;
-
-	@JsonProperty("RequiredDate")
-	private Date requiredDate;
+//	@JsonProperty("OrderDate")
+//	private String orderDate;
+//
+//	@JsonProperty("ShippedDate")
+//	private String shippedDate;
+//
+//	@JsonProperty("RequiredDate")
+//	private String requiredDate;
 
 	@JsonProperty("Freight")
 	private Float freight;

@@ -20,6 +20,7 @@ import com.spring.jasperreports.model.northwind.NorthwindCustomerOrders;
 import com.spring.jasperreports.model.simple.FlatStructuredClass;
 
 import net.sf.jasperreports.engine.JRParameter;
+import net.sf.jasperreports.engine.query.JsonQLQueryExecuterFactory;
 import net.sf.jasperreports.engine.query.JsonQueryExecuterFactory;
 
 public class PDFGenerationService {
@@ -77,12 +78,20 @@ public class PDFGenerationService {
 		Object data = dataProviderService.convertDTO(NorthwindCustomerOrders.class,
 				"/json/jsonqldatasource/northwind.json");
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put(JsonQueryExecuterFactory.JSON_DATE_PATTERN, "yyyy-MM-dd");
-		params.put(JsonQueryExecuterFactory.JSON_NUMBER_PATTERN, "#,##0.##");
-		params.put(JsonQueryExecuterFactory.JSON_LOCALE, Locale.ENGLISH);
+//		params.put(JsonQLQueryExecuterFactory.JSON_DATE_PATTERN, "yyyy-MM-dd");
+//		params.put(JsonQLQueryExecuterFactory.JSON_NUMBER_PATTERN, "#,##0.##");
+		params.put(JsonQLQueryExecuterFactory.JSON_LOCALE, Locale.ENGLISH);
 		params.put(JRParameter.REPORT_LOCALE, Locale.US);
-		byte[] pdfBytes = jasperGenerator.generatePdf("/templates/jsonqldatasource/NorthwindOrdersReport.jrxml", data,
-				params);
+		try {
+			String objectAsJson = new ObjectMapper().writeValueAsString(data);
+			InputStream in = IOUtils.toInputStream(objectAsJson, "UTF-8");
+			System.out.println("generatePdfWithJsoNQLNorthwind objectAsJson: " + objectAsJson);
+//			params.put(JsonQueryExecuterFactory.JSON_SOURCE, objectAsJson);
+//			params.put(JsonQueryExecuterFactory.JSON_INPUT_STREAM, in);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		byte[] pdfBytes = jasperGenerator.generatePdf("/templates/jsonqldatasource/NorthwindOrdersReport.jrxml", data, params);
 		saveToFile(pdfBytes, "NorthwindCustomerOrders.pdf");
 	}
 

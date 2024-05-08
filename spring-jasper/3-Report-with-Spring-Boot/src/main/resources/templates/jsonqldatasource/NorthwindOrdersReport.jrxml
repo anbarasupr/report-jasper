@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NorthwindOrdersReport" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="50" bottomMargin="50" uuid="bbe115b5-a5a0-4b39-9b73-7092dc59ab6d">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Northwind Jsonql Data Adapter"/>
 	<style name="Sans_Normal" isDefault="true" fontName="DejaVu Sans" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Sans_Normal_8" style="Sans_Normal" fontSize="8"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Sans_Bold_8" style="Sans_Bold" fontSize="8"/>
 	<queryString language="jsonql">
-		<![CDATA[..Orders(@size > 1).*]]>
+		<![CDATA[]]>
 	</queryString>
 	<field name="Id" class="java.lang.String">
 		<property name="net.sf.jasperreports.jsonql.field.expression" value="OrderID"/>
@@ -161,4 +160,24 @@
 			</textField>
 		</band>
 	</pageFooter>
+	<summary>
+		<band height="159">
+			<textField>
+				<reportElement x="-10" y="10" width="525" height="30" uuid="3b8be21d-17ab-4291-81f6-33ef154541cf"/>
+				<textFieldExpression><![CDATA[$P{net.sf.jasperreports.json.source}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-10" y="50" width="525" height="30" uuid="a1553001-de24-4a65-833f-c58f1d09f861"/>
+				<textFieldExpression><![CDATA[$P{net.sf.jasperreports.json.sources}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-10" y="90" width="525" height="30" uuid="b9194045-e9c7-466c-8c11-02ed73c499a4"/>
+				<textFieldExpression><![CDATA[$P{JSON_INPUT_STREAM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-10" y="129" width="525" height="30" uuid="82cca912-5148-4c09-a92b-1d8371e497a0"/>
+				<textFieldExpression><![CDATA[$P{REPORT_DATA_SOURCE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
 </jasperReport>

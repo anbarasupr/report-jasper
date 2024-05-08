@@ -68,14 +68,14 @@ public class JasperGenerator {
 			Map<String, Object> parametersMap) {
 		try {
 			System.out.println("parametersMap:: "+parametersMap);
-//			return JasperFillManager.fillReport(compiledReport, parametersMap, jsonDataSource);
-			return JasperFillManager.fillReport(compiledReport, parametersMap);
+			return JasperFillManager.fillReport(compiledReport, parametersMap, jsonDataSource);
+//			return JasperFillManager.fillReport(compiledReport, parametersMap);
 		} catch (JRException e) {
 			throw new CannotFillReportWithDataException("Cannot fill report with given data", e);
 		}
 	}
 
-	private JsonDataSource getJsonDataSource(Object data) {
+	private JsonQLDataSource getJsonDataSource(Object data) {
 		try {
 			if(data == null) {
 				return null;
@@ -84,8 +84,8 @@ public class JasperGenerator {
 			String objectAsJson = objectMapper.writeValueAsString(data);
 			System.out.println("JsonDataSource objectAsJson: " + objectAsJson);
 			InputStream in = IOUtils.toInputStream(objectAsJson, "UTF-8");
-//			return new JsonDataSource(in);
-			return new JsonDataSource(in);
+//			return new JsonDataSource(in); // JsonQLDataSource
+			return new JsonQLDataSource(in, "..Orders.*");
 		} catch (Exception e) {
 			throw new CannotPrepareJsonDataSourceException("Cannot prepare JSON Data Source with given data", e);
 		}

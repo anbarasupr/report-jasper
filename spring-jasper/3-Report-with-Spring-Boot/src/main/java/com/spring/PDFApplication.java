@@ -4,7 +4,7 @@ import com.spring.jasperreports.service.PDFGenerationService;
 
 public class PDFApplication {
 	static {
-		System.setProperty("java.awt.headless", "true");
+//		System.setProperty("java.awt.headless", "true");
 	}
 
 	public static void main(String args[]) {
@@ -14,9 +14,9 @@ public class PDFApplication {
 //		service.generatePdfWithCustomFont();
 //		service.generatePdfWithReportWithSubreport();
 
-//		service.generatePdfWithJsoNQLNorthwind();
-		
-		service.generatePdfWithJsonNorthwind();
+		service.generatePdfWithJsoNQLNorthwind();
+//		
+//		service.generatePdfWithJsonNorthwind();
 	}
 
 }
