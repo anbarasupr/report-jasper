@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.spring.controllers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.pojo.Student;
-import com.example.pojo.Subject;
+import com.spring.pojo.Student;
+import com.spring.pojo.Subject;
 
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;

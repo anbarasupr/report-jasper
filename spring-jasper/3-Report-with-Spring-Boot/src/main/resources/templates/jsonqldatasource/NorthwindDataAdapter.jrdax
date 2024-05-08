@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsonDataAdapter class="net.sf.jasperreports.data.json.JsonDataAdapterImpl">
+  <name>NorthWind JsonQL DA</name>
+  <dataFile type="repositoryDataLocation">
+    <location>F:\git\report-jasper\spring-jasper\3-Report-with-Spring-Boot\src\main\resources\jsonql\jsondatasource\northwind.json</location>
+  </dataFile>
+  <datePattern>yyyy-MM-dd</datePattern>
+  <numberPattern>#,##0.##</numberPattern>
+  <selectExpression></selectExpression>
+  <locale>en_IN</locale>
+  <timeZone>America/Los_Angeles</timeZone>
+  <useConnection>false</useConnection>
+  <language>jsonql</language>
+</jsonDataAdapter>

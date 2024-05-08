@@ -1,4 +1,4 @@
-package com.example.pojo;
+package com.spring.pojo;
 
 public class Student {
 
